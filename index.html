@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海报速排工具 · Poster Maker</title>
+<meta name="description" content="免费开源、纯浏览器运行的海报速排小工具，填标题/副标题/标签，选配色和排版，Canvas 实时渲染并导出 PNG。不用装软件、不联网。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>海报<span class="accent">速排</span>工具</h1>
+    <p class="tagline">填标题、副标题、标签文字，选配色和排版方式，右边实时渲染海报，一键导出 PNG。纯 Canvas 实现，不需要接任何 AI 接口。</p>
+  </header>
+
+  <main class="layout">
+    <section class="controls">
+      <div class="field">
+        <label>主标题</label>
+        <input id="titleInput" type="text" value="秋季新品发布" maxlength="24">
+      </div>
+      <div class="field">
+        <label>副标题</label>
+        <input id="subtitleInput" type="text" value="限时 8 折优惠，仅此一周" maxlength="40">
+      </div>
+      <div class="field">
+        <label>标签文字</label>
+        <input id="tagInput" type="text" value="立即抢购" maxlength="10">
+      </div>
+      <div class="field">
+        <label>配色</label>
+        <select id="themeSelect">
+          <option value="sunset">日落橙紫</option>
+          <option value="ocean">深海蓝绿</option>
+          <option value="mono">极简暗黑</option>
+          <option value="neon">霓虹粉紫</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>排版</label>
+        <select id="layoutSelect">
+          <option value="center">居中</option>
+          <option value="bottom">底部条带</option>
+          <option value="split">对角分栏</option>
+        </select>
+      </div>
+      <button id="btnExport" class="btn btn-primary">导出 PNG ↓</button>
+    </section>
+
+    <section class="canvas-wrap">
+      <canvas id="canvas" width="800" height="1000"></canvas>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>MIT 协议开源，纯前端 Canvas 渲染，不联网、不上传。</p>
+    <p>想要 AI 智能文案排版、配色搭配、素材匹配、图层可视化编辑？<a href="https://inzyxuashop.com/aihaibao-yuanma.html" target="_blank" rel="noopener">看看完整版 AI 海报设计源码 →</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
